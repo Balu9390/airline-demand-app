@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Flight Results</title></head>
+<body>
+  <h2>Flight Results for {{ origin }} to {{ destination }}</h2>
+  {% if flights %}
+    <ul>
+      {% for flight in flights %}
+        <li>{{ flight.route }} - ${{ flight.price }} on {{ flight.date }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No flights found.</p>
+  {% endif %}
+  <a href="/">Search Again</a>
+</body>
+</html>
